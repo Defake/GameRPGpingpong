@@ -18,7 +18,8 @@ namespace GameRPGpingpong
 
 		public void StartGame()
 		{
-			// We can manage characters
+			// We can create characters, manage them, place them into some rooms or do another game stuff
+			// But characters only cast their skills themselves. By players' controls or AI or something else
 
 			Character zelda = new Character(100, 100, 100, 100);
 			zelda.LearnNewSkill(SkillsFactory.ArmorBreak());

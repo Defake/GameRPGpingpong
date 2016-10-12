@@ -28,5 +28,7 @@ namespace GameRPGpingpong
 
 		public void LearnNewSkill(Skill skill) => skills.Add(skill);
 		
+		/* Here will be some player controls or AI system to cast skills */
+
 	}
 }
