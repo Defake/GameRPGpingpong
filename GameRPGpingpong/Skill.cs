@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace GameRPGpingpong 
 {
-	public class Skill : GameObject
+	public abstract class Skill : GameObject
 	{
-		public readonly int manaCost;
-		public readonly Action<Character> skillAction;
-
-		private double _cooldown;
+		private readonly int _manaCost;
+		private readonly double _cooldown;
+		private readonly Action<Character> _skillAction;
+		
 		private double _cooldownTimeRemaining = 0;
 		private double _lastTime;
 
-		// Remember manacost and what action the skill performs
-		public Skill(int manaCost, Action<Character> skillAction)
+		// Remember manacost, cooldown and what action the skill performs
+		public Skill(int manaCost, double cooldown, Action<Character> skillAction)
 		{
-			this.manaCost = manaCost;
-			this.skillAction = skillAction;
-			_lastTime = 0; // curent system time
+			_manaCost = manaCost;
+			_cooldown = cooldown;
+			_skillAction = skillAction;
+		}
+
+		public void Update(double deltaTime) {
+			// reduce cooldown time
 		}
 
 		/// <summary>
@@ -31,29 +35,34 @@ namespace GameRPGpingpong
 		/// <returns>True = the character can use this skill. False = can't yet</returns>
 		public bool IsAvailable(int manaOfTheCaster)
 		{
-			return _cooldownTimeRemaining <= 0 && manaOfTheCaster >= manaCost;
+			return _cooldownTimeRemaining <= 0 && manaOfTheCaster >= _manaCost;
 		}
 
+		/// <summary>
+		/// Sets skill to cooldown
+		/// </summary>
+		public void SetToCooldown()
+		{
+			_cooldownTimeRemaining = _cooldown;
+		}
+		
 		/// <summary>
 		/// Performs the skill's action and sets cooldown on the skill
 		/// </summary>
 		/// <param name="manaOfTheCaster">Caster's mana. Mana will be reduced by manacost</param>
-		/// <param name="target">The character which stats will be changed by this skill</param>
-		public void Cast(ref int manaOfTheCaster, Character target)
+		/// <param name="targets">The characters which stats will be changed by this skill</param>
+		protected void PerformSkillCasting(ref int manaOfTheCaster, params Character[] targets)
 		{
-			if (IsAvailable(manaOfTheCaster))
-			{
-				skillAction(target);
-				manaOfTheCaster -= manaCost;
-				_cooldownTimeRemaining = _cooldown;
-			} 
-			else 
+			if (IsAvailable(manaOfTheCaster)) {
+				foreach (Character ch in targets)
+					_skillAction(ch);
+
+				manaOfTheCaster -= _manaCost;
+				SetToCooldown();
+				
+			} else
 				Console.WriteLine("Not yet!");
 		}
 
-		public void Update(double deltaTime)
-		{
-			// reduce cooldown time
-		}
 	}
 }

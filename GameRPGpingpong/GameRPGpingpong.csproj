@@ -50,7 +50,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skill.cs" />
+    <Compile Include="SkillAOE.cs" />
     <Compile Include="SkillsFactory.cs" />
+    <Compile Include="SkillTarget.cs" />
     <Compile Include="Stat.cs" />
   </ItemGroup>
   <ItemGroup>
