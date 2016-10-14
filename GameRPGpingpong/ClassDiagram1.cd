@@ -1,50 +1,72 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GameRPGpingpong.Modificator">
-    <Position X="4.25" Y="3" Width="1.5" />
+    <Position X="8.25" Y="2.75" Width="1.5" />
     <Members>
       <Method Name="Modificator" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAgAABAAAACAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAQAAABAAAAAAAgAABAAAACAAAAAAA=</HashCode>
       <FileName>Modificator.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GameRPGpingpong.Stat">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="2.75" Width="1.5" />
     <Members>
       <Method Name="Stat" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAIAAAAAgAAAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABQAAAAAAAAAAAAAAIAAAAAgAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Stat.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Field Name="_modificators" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GameRPGpingpong.Skill">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAIAAAACAAAAAABAAAABAAAAAACAAAAAIAAAAA=</HashCode>
+      <HashCode>AAQAAEAIAAAACAAAAAABAAAABAAAAAACAAAAAIAAAAA=</HashCode>
       <FileName>Skill.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GameRPGpingpong.Character">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="2.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAgAAAAQgAAAAAAAAgAAo=</HashCode>
+      <HashCode>AAQAABAAAIAAAAAAAAAACAAAgAAAAQgAAAAAAAAAAAo=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="defense" />
       <Field Name="health" />
-      <Field Name="manaRegen" />
       <Field Name="speed" />
+      <Field Name="manaRegen" />
+      <Field Name="defense" />
+      <Field Name="manna" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="skills" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.706" />
   </Class>
+  <Class Name="GameRPGpingpong.GameManager">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_gameContainer" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="GameRPGpingpong.GameObject">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

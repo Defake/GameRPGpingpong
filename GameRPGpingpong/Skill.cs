@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameRPGpingpong 
 {
-	public class Skill
+	public class Skill : GameObject
 	{
 		public readonly int manaCost;
 		public readonly Action<Character> skillAction;
@@ -26,18 +26,11 @@ namespace GameRPGpingpong
 		/// <summary>
 		/// Find out can character use this skill or not 
 		/// </summary>
-		/// <param name="manaOfTheCaster">Character passes their currentMana as parameter 
+		/// <param name="manaOfTheCaster">Character passes their manna as parameter 
 		/// to find out it's enough or not</param>
 		/// <returns>True = the character can use this skill. False = can't yet</returns>
 		public bool IsAvailable(int manaOfTheCaster)
 		{
-			if (_cooldownTimeRemaining > 0)
-			{
-				var currentTime = 0; //current sys time
-				_cooldownTimeRemaining -= currentTime - _lastTime;
-				_lastTime = currentTime;
-			}
-
 			return _cooldownTimeRemaining <= 0 && manaOfTheCaster >= manaCost;
 		}
 
@@ -58,5 +51,9 @@ namespace GameRPGpingpong
 				Console.WriteLine("Not yet!");
 		}
 
+		public void Update(double deltaTime)
+		{
+			// reduce cooldown time
+		}
 	}
 }

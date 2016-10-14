@@ -6,29 +6,38 @@ using System.Threading.Tasks;
 
 namespace GameRPGpingpong 
 {
-	public class Character
+	public class Character : GameObject 
 	{
 		public readonly Stat health;
 		public readonly Stat speed;
 		public readonly Stat manaRegen;
 		public readonly Stat defense;
-		private int _currentMana;
-
+		public readonly Stat manna;
+		
 		public List<Skill> skills { get; }
+
+		private readonly List<Stat> _stats; 
 
 		public Character(int health, int speed, int manaRegen, int defense)
 		{
-			this.health = new Stat(health);
-			this.speed = new Stat(speed);
-			this.manaRegen = new Stat(manaRegen);
-			this.defense = new Stat(defense);
+			_stats.Add(this.health = new Stat(health));
+			_stats.Add(this.speed = new Stat(speed));
+			_stats.Add(this.manaRegen = new Stat(manaRegen));
+			_stats.Add(this.defense = new Stat(defense));
+			_stats.Add(manna = new Stat(100));
 			skills = new List<Skill>();
-			_currentMana = 100;
 		}
 
 		public void LearnNewSkill(Skill skill) => skills.Add(skill);
 		
 		/* Here will be some player controls or AI system to cast skills */
 
+		public void Update(double deltaTime)
+		{
+			foreach (Stat stat in _stats)
+			{
+				stat.Update(deltaTime);
+			}
+		}
 	}
 }

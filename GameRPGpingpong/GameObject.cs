@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace GameRPGpingpong 
 {
-	class Program 
+	public interface GameObject
 	{
-		static void Main(string[] args)
-		{
 
-		}
+		void Update(double deltaTime);
+
 	}
 }

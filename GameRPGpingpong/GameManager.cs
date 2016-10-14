@@ -9,11 +9,11 @@ namespace GameRPGpingpong
 	public class GameManager
 	{
 
-		private readonly List<Character> _characters;
+		private readonly List<GameObject> _gameContainer;
 
 		public GameManager()
 		{
-			_characters = new List<Character>();
+			_gameContainer = new List<GameObject>();
 		}
 
 		public void StartGame()
@@ -29,8 +29,18 @@ namespace GameRPGpingpong
 			thief.LearnNewSkill(SkillsFactory.BulletEnergy());
 			thief.LearnNewSkill(SkillsFactory.ManaBurn());
 
-			_characters.Add(zelda);
-			_characters.Add(thief);
+			_gameContainer.Add(zelda);
+			_gameContainer.Add(thief);
+
+			while (true)
+			{
+				var dt = 0; // get delta time
+
+				// Players play the game. Controls, events lalallal etc
+				foreach (var o in _gameContainer)
+					o.Update(dt);
+			}
+
 		}
 	}
 }
