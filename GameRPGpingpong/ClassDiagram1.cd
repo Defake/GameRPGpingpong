@@ -36,7 +36,7 @@
   <Class Name="GameRPGpingpong.Character">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAABAAAIAAAAAAAAAACAAAgAAAAQgAAAAAAAAAAAo=</HashCode>
+      <HashCode>AAQAAIAAAIAAAAAAAAAACAAAgAAAAQgAAAAAABAAAAo=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -47,7 +47,8 @@
       <Field Name="manna" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="skills" />
+      <Property Name="aoeSkills" />
+      <Property Name="targetSkills" />
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.706" />
   </Class>
@@ -62,14 +63,14 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="GameRPGpingpong.SkillAOE">
-    <Position X="2.75" Y="4.25" Width="1.5" />
+    <Position X="3.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SkillAOE.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameRPGpingpong.SkillTarget">
-    <Position X="0.75" Y="4.25" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SkillTarget.cs</FileName>
